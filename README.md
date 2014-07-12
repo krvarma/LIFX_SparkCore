@@ -31,6 +31,18 @@ There are two samples, one is the to play with the colors, turn on, blink, etc..
 
 ![Spark Core Sample Two][7]
 
+**Limitations**
+
+ 1. In this sample I am considering only a single LIFX bulb, when there
+    are more than one, the application can easily changed to support
+    multiple bulbs or a group of bulbs. Spark Core try to get how many
+    lights and groups are connected and fetch the data from node.js
+    server. After this information retrieved we can control individual
+    bulb.
+
+ 2. The lifx.js library does not provide methods to retrieve current
+        color of the bulb. This requires some amount of work to try
+        understanding the protocol involved and implement in the library
 
   [1]: https://community.spark.io/t/mqtt-library-and-sample/2111
   [2]: https://github.com/adamvr/MQTT.js/
