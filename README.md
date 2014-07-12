@@ -14,8 +14,8 @@ The project works using MQTT as message broker. The Spark Core uses this [MQTT L
 
 **Sample applications**
 
-There are two samples, one is the to play with the colors, turn on, blink, etc... For this sample I am using for both MQTT and Sparknode. Both achieve the same results but with different ways. The second example uses TSL2561 Light sensor to watch the light level and turn the LIFX red when it is below a particular level and green when above the level. 
 
+There are two samples, one is the to play with the colors, turn on, blink, etc... For this sample I am using for both MQTT and Sparknode. Both achieve the same results but with different ways. The second example uses TSL2561 Light sensor to watch the light level and turn the LIFX red when it is below a particular level and green when above the level. 
 The first sample one comes with a Web Page to control the bulb. You can use this web page to set the color, turn on/off and blink the bulb (don't forget to replace the *deviceid* and *accesstoken* with actual values).
 
 **Installation**
