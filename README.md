@@ -11,17 +11,23 @@ I have this node.js server running on my Raspberry PI which is connected to the 
 Merely controlling the bulb from outside network is not that exciting, but Spark Core can do lot of amazing things and controlling LIFX from Spark Core is good idea. We can use the LIFX as a notification device, say you are monitoring the temperature of a room and if the temperature is not within the limit Spark Core can blink the bulb or change the color, etc...
 
 **Installation**
-1. Download and Install Node.js from [this link][5]
-2. Download the node.js server from https://github.com/krvarma/LIFX_SparkCore and extract
-3. Goto the folder and run `npm install`. Since it contains the package.json file, it will install all the dependencies
-4. Run `node lifx.js`
-5. Flash the Spark Core with one of the example
-6. Connect LIFX and wait for the bulb to connect to the network
+
+ 1. Download and Install Node.js from [this link][5] 
+ 2. Download the node.js server from https://github.com/krvarma/LIFX_SparkCore and extract 
+ 3. Goto the folder and run `npm install`. Since it contains the package.json file, it will install all the dependencies 
+ 4. Run `node lifx.js` 
+ 5. Flash the Spark Core with one of the example 
+ 6. Connect LIFX and wait for the bulb to connect to the network
 
 There are two samples, one is the to play with the colors, turn on, blink, etc... Another example uses TSL2561 Light sensor to watch te light level and turn the LIFX red when it is below a particular level and turn green when above the level. The sample one comes with a Web Page to control the bulb. You can use this web page to set the color, turn on/off and blink the bulb (don't forget to replace the *deviceid* and *accesstoken* with actual values).
 
 **Screenshots**
 
+*Web Page*
+![enter image description here][6]
+
+*Spark Core Sample Two* 
+![enter image description here][7]
 
 
   [1]: https://community.spark.io/t/mqtt-library-and-sample/2111
@@ -29,3 +35,5 @@ There are two samples, one is the to play with the colors, turn on, blink, etc..
   [3]: https://github.com/magicmonkey/lifxjs
   [4]: http://iot.eclipse.org/sandbox.html
   [5]: http://nodejs.org/
+  [6]: https://raw.githubusercontent.com/krvarma/LIFX_SparkCore/master/screenshots/web.jpg
+  [7]: https://raw.githubusercontent.com/krvarma/LIFX_SparkCore/master/screenshots/spark.JPG
