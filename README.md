@@ -24,10 +24,12 @@ There are two samples, one is the to play with the colors, turn on, blink, etc..
 **Screenshots**
 
 *Web Page*
-![enter image description here][6]
+
+![Web Page][6]
 
 *Spark Core Sample Two* 
-![enter image description here][7]
+
+![Spark Core Sample Two][7]
 
 
   [1]: https://community.spark.io/t/mqtt-library-and-sample/2111
