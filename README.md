@@ -6,6 +6,7 @@ Control LIFX Bulb using Spark Core
 Here I am sharing a project to control LIFX WiFi bulb with Spark Core. As of now LIFX cannot be controlled/accessed from outside network/Internet, it can only be accessed from the network in which it is connected to. One method to access it from Internet is to use an intermediate server running on the same network it is connected to and let the server control the LIFX. This server acts as a bridge between the bulb and outside world. LIFX provides some [SDKs][1] to control the bulb. There are also lot of reverse engineered SDKs available, one such is the LIFX.js library for node.js. 
 
 **Communication Between Spark Core and Intermediate server**
+
 We can different methods to communicate between Spark Core and Intermediate Server, such as MQTT, Sparknode, etc... For this project I used MQTT and Sparknode. There is no reason to use both, but just for exploring I used both MQTT and Sparknode. 
 
 The project works using MQTT as message broker. The Spark Core uses this [MQTT Library by Chris Howard][2] to connect to MQTT server and publish messages. The node.js server use this [MQTT Library by Adam Rudd][3]. For controlling LIFX bulb I am using the [LIFX.js library by Kevin Bowman (magicmonkey)][4]. I am using 
