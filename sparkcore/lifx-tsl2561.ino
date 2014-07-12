@@ -25,33 +25,43 @@ void setup() {
     pinMode(D7, OUTPUT);
     Serial.begin(9600);
     
+	// Setup TSL2561
     tsl.begin();
     tsl.getID(id);
     tsl.setTiming(0, 2, ms);
     tsl.setPowerUp();
     
+	// Set a Spark function to set the lower limit
     Spark.function("setLightLowerLimit", setLowerLimit);
     
+	// Connect to MQTT server
     client.connect("Spark");
 }
 
 void loop() {
+	// if not connected, try connecting
+	// This here because sometimes the connection to the MQTT server breaks,
+	// to avoid restarting, here check the connected status and try reconnecting
     if(!client.connected()){
         Serial.println("Connecting...");
         
         client.connect("Spark");
     }
     
+	// Get Light values
     tsl.getData(data1, data2);
     
     double lux;
     boolean good = tsl.getLux(gain,ms,data1,data2,lux);
     
+	// Just some debug info, PLEASE REMOVE THIS
     char szInfo[32];
     
     sprintf(szInfo, "Current value %.2f (lux) - ", lux);
     Serial.print(szInfo);
     
+	// Check if the light value is greater than the permissible level,
+	// if it is not then change the LIFX color to RED, otherwise change to GREEN
     if(lux < lowerLimit){
         if(!isOn){
             //turnOnLifx(true);
@@ -77,6 +87,7 @@ void loop() {
     delay(1000);
 }
 
+// Turn LIFX on
 void turnOnLifx(bool isOn){
     if(client.connected()){
         char szCmd[9];
@@ -90,6 +101,7 @@ void turnOnLifx(bool isOn){
     }
 }
 
+// Change the color
 void setLifxColor(char* color){
     if(client.connected()){
         char szCmd[22];

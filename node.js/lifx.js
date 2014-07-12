@@ -2,17 +2,21 @@ var mqtt = require('mqtt')
 var lifx = require("lifx");
 var bulbFound = false;
 
+// Initialize LIFX
 var lx = lifx.init();
 var client = mqtt.createClient(1883, 'iot.eclipse.org');
 
+// Subscribe to MQTT
 client.subscribe('lifxcmd');
 
+// Called when connected bulb found
 lx.on('bulb', function(b){
 	bulbFound = true;
 	
 	console.log("LIFX Bulb Found");
 });
 
+// We receive a message, parse and process
 client.on('message', function (topic, message) {
 	console.log(message);
   
@@ -22,6 +26,7 @@ client.on('message', function (topic, message) {
 	console.log(msg[1]);
 	
 	if(bulbFound){
+		// LIGHT command found, second argument will be 1 or 0, 1 for on and 0 for off
 		if("lights" == msg[0]){
 			if("1" == msg[1]){
 				lx.lightsOn();
@@ -30,6 +35,7 @@ client.on('message', function (topic, message) {
 				lx.lightsOff();
 			}
 		}
+		// COLOR command found, second argument will be R,G,B. Parse RGB and set LIFX color
 		else if("color" == msg[0]){
 			var clrarray = msg[1].split(",");
 			
@@ -49,6 +55,7 @@ client.on('message', function (topic, message) {
 			
 			lx.lightsColour(parseInt(h), parseInt(s), parseInt(b), 0x0dac, 0x0513);
 		}
+		// BLINK command found, second argument is number of times to blink
 		else if("blink" == msg[0]){
 			var times = msg[1];
 			
@@ -59,6 +66,7 @@ client.on('message', function (topic, message) {
 				wait(1000);
 			}
 		}
+		// BLINKRGB, a simple test command, not much usefull
 		else if("blinkrgb" == msg[0]){
 			var clr, h, s, l;
 			
@@ -96,6 +104,7 @@ client.on('message', function (topic, message) {
 	}
 });
 
+// Convert RGB to HSL
 function rgbToHsl(r, g, b){
     r /= 255, g /= 255, b /= 255;
     var max = Math.max(r, g, b), min = Math.min(r, g, b);
@@ -117,6 +126,7 @@ function rgbToHsl(r, g, b){
     return [h, s, l];
 }
 
+// A simple wait method
 function wait(timeout){
 	var start = new Date().getTime();
 	
