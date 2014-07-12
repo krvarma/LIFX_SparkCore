@@ -150,11 +150,11 @@
 		.on("dragstop.spectrum", function(e, c) {
 			var rgb  = c.toRgb();
 			
-			setBlinkMColor(rgb);
+			setLIFXColor(rgb);
 			console.log(rgb);
 		});
 		
-		function setBlinkMColor(color){
+		function setLIFXColor(color){
 			var clr = "color=" + color.r + "," + color.g + "," + color.b;
 			
 			console.log("Setting color to " + clr);
