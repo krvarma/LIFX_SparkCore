@@ -1,0 +1,30 @@
+{
+  "name": "lifxsparknode",
+  "version": "0.0.1",
+  "description": "Sparknode and LIFX Bulb",
+  "main": "lifxnode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sparknode",
+    "spark",
+    "core",
+    "lifx"
+  ],
+  "author": "Krishnaraj Varma (http://github.com/krvarma)",
+  "license": "ISC",
+  "dependencies": {
+    "lifx": "^0.2.1",
+    "sparknode": "^0.4.9"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krvarma/LIFX_SparkCore"
+  },
+  "bugs": {
+    "url": "https://github.com/krvarma/LIFX_SparkCore/issues"
+  },
+  "homepage": "https://github.com/krvarma/LIFX_SparkCore"
+}
