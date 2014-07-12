@@ -7,7 +7,7 @@ Here I am sharing a project to control LIFX WiFi bulb with Spark Core. As of now
 
 **Communication Between Spark Core and Intermediate server**
 
-We can different methods to communicate between Spark Core and Intermediate Server, such as MQTT, Sparknode, etc... For this project I used MQTT and Sparknode. There is no reason to use both, but just for exploring I used both MQTT and Sparknode. 
+We can use different methods to communicate between Spark Core and Intermediate Server, such as MQTT, Sparknode, etc... For this project I used MQTT and Sparknode. There is no reason to use both, but just for exploring I used both MQTT and Sparknode. 
 
 The project works using MQTT as message broker. The Spark Core uses this [MQTT Library by Chris Howard][2] to connect to MQTT server and publish messages. The node.js server use this [MQTT Library by Adam Rudd][3]. For controlling LIFX bulb I am using the [LIFX.js library by Kevin Bowman (magicmonkey)][4]. I am using 
 [Eclipse MQTT Sandbox][5] as MQTT Server. I have this node.js server running on my Raspberry PI which is connected to the same network to which the LIFX is connected. 
