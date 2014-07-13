@@ -31,6 +31,10 @@ The first sample one comes with a Web Page to control the bulb. You can use this
 
 Merely controlling the bulb from outside network is not that exciting, but Spark Core can do lot of amazing things and controlling LIFX from Spark Core is good idea. We can use the LIFX as a notification device, say you are monitoring the temperature of a room and if the temperature is not within the limit Spark Core can blink the bulb or change the color, etc...
 
+**Demo Video**
+
+http://www.youtube.com/watch?v=cbuwb0Q3hsA
+
 **Screenshots**
 
 *Web Page*
